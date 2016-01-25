@@ -1,4 +1,4 @@
-# Install Notebook
+#  :sparkles: Install Notebook  :sparkles:
 
 ## Ubuntu
 ### 1. Install Python from [source](https://www.python.org/downloads/) (optional)
