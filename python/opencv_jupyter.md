@@ -37,16 +37,16 @@ $ mkdir build
 $ cd build
 
 $ cmake -D CMAKE_BUILD_TYPE=RELEASE \
-      -D CMAKE_INSTALL_PREFIX=/usr/local \
-      -D INSTALL_C_EXAMPLES=OFF \
-      -D INSTALL_PYTHON_EXAMPLES=OFF \
-      -D OPENCV_EXTRA_MODULES_PATH=~/Downloads/opencv_contrib/modules/ \
-      -D BUILD_EXAMPLES=OFF \
-      -D PYTHON3_EXECUTABLE=~/.pyvenv/IPython/bin/python3.5 \
-      -D PYTHON3_LIBRARY=/usr/lib/x86_64-linux-gnu/libpython3.5m.so \
-      -D PYTHON3_PACKAGES_PATH=~/.pyvenv/IPython/lib/python3.5/site-packages/ \
-      -D PYTHON3_NUMPY_INCLUDE_DIRS=~/.pyvenv/IPython/lib/python3.5/site-packages/numpy/core/include/ \
-      -D PYTHON_DEFAULT_EXECUTABLE=~/.pyvenv/IPython/bin/python3.5 ..
+        -D CMAKE_INSTALL_PREFIX=/usr/local \
+        -D INSTALL_C_EXAMPLES=OFF \
+        -D INSTALL_PYTHON_EXAMPLES=OFF \
+        -D OPENCV_EXTRA_MODULES_PATH=~/Downloads/opencv_contrib/modules/ \
+        -D BUILD_EXAMPLES=OFF \
+        -D PYTHON3_EXECUTABLE=~/.pyvenv/IPython/bin/python3.5 \
+        -D PYTHON3_LIBRARY=/usr/lib/x86_64-linux-gnu/libpython3.5m.so \
+        -D PYTHON3_PACKAGES_PATH=~/.pyvenv/IPython/lib/python3.5/site-packages/ \
+        -D PYTHON3_NUMPY_INCLUDE_DIRS=~/.pyvenv/IPython/lib/python3.5/site-packages/numpy/core/include/ \
+        -D PYTHON_DEFAULT_EXECUTABLE=~/.pyvenv/IPython/bin/python3.5 ..
 
 $ make -j1
 $ sudo make install
