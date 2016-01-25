@@ -1,7 +1,7 @@
 # Install Notebook
 
 ## Ubuntu
-### 1. Install Python from [source](https://www.python.org/downloads/) (Optional)
+### 1. Install Python from [source](https://www.python.org/downloads/) (optional)
 Install dependencies
 ```shell
 $ sudo apt-get install libssl-dev libfreetype6-dev libsqlite3-dev libatlas-base-dev gfortran
