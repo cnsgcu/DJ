@@ -1,7 +1,7 @@
 #  :sparkles: Install Notebook  :sparkles:
 
 ## Ubuntu
-### 1. Install Python from [source](https://www.python.org/downloads/) (optional)
+### 1. Install Python from [source](https://www.python.org/downloads/) (Optional)
 Install dependencies
 ```shell
 $ sudo apt-get install libssl-dev libfreetype6-dev libsqlite3-dev libatlas-base-dev gfortran
