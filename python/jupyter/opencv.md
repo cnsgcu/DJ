@@ -1,4 +1,4 @@
-# Install OpenCV
+# :sparkles: Install OpenCV :sparkles:
 
 ## Ubuntu
 ### 1. Install dependencies
