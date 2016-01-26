@@ -14,6 +14,10 @@ Install packages to read various video formats
 ```shell
 $ sudo apt-get install libavcodec-dev libavformat-dev libswscale-dev libv4l-dev
 ```
+Install packages to use OpenCV GUI
+```shell
+$ sudo apt-get install libgtk2.0-dev
+```
 Install python5-dev package
 ```shell
 $ sudo add-apt-repository ppa:fkrull/deadsnakes
@@ -30,7 +34,7 @@ $ git clone https://github.com/Itseez/opencv_contrib.git
 $ cd opencv_contrib
 $ git checkout 3.1.0
 ```
-### 3. Install OpenCV for existing pyvenv
+### 3. Install OpenCV for existing Python virtual environment
 ```shell
 $ cd opencv
 $ mkdir build
