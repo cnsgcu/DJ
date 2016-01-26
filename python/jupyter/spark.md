@@ -1,4 +1,4 @@
-# Install Apache Spark
+# :sparkles: Install Apache Spark :sparkles:
 
 1. Download pre-built version of [Apache Spark](http://spark.apache.org/downloads.html)
 2. Unpack the downloaded file and refer to the unpacking folder as *LOCAL_SPARK_HOME*
