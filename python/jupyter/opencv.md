@@ -4,7 +4,7 @@
 ### 1. Install dependencies
 Install build tools
 ```shell
-$ sudo apt-get install git cmake pkg-config
+$ sudo apt-get install build-essential git cmake pkg-config libatlas-base-dev gfortran
 ```
 Install packages to read various image formats
 ```shell
