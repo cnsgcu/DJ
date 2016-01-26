@@ -14,7 +14,7 @@ Install packages to read various video formats
 ```shell
 $ sudo apt-get install libavcodec-dev libavformat-dev libswscale-dev libv4l-dev
 ```
-Install packages to use OpenCV GUI
+Install packages to use OpenCV GUI (Optional)
 ```shell
 $ sudo apt-get install libgtk2.0-dev
 ```
