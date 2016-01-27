@@ -1,5 +1,5 @@
 # :sparkles: Install RStudio Server :sparkles:
-## Ubuntu
+## :penguin: Ubuntu
 1. Choose a CRAN mirror from https://cran.r-project.org/mirrors.html to add a deb entry in /etc/apt/sources.list file
   
   ```shell
