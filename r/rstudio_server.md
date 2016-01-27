@@ -31,16 +31,18 @@
    
 4. Install the latest RStudio Server
 
-  64bit
+  64 bit
   ```shell
   $ wget https://download2.rstudio.org/rstudio-server-0.99.491-amd64.deb
   $ dpkg -I rstudio-server-0.99.491-amd64.deb  # list required dependencies to install (Optional)
-  $ sudo dpkg -i rstudio-server-0.99.491-amd64.deb
+  
+  $ sudo dpkg -i rstudio-server-0.99.491-amd64.deb # install RStudio Server 64 bit
   ```
-  32bit
+  32 bit
   ```shell
   $ wget https://download2.rstudio.org/rstudio-server-0.99.491-i386.deb
   $ dpkg -I rstudio-server-0.99.491-i386.deb  # list required dependencies to install (Optional)
-  $ sudo dpkg -i rstudio-server-0.99.491-i386.deb
+  
+  $ sudo dpkg -i rstudio-server-0.99.491-i386.deb # install RStudio Server 32 bit
   ```
   
