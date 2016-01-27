@@ -1,6 +1,6 @@
 # DJ
 ## :books: Reading
-1. [Probabilistic Programming and Bayesian Methods](https://github.com/CamDavidsonPilon/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers)
+  - [ ] [Probabilistic Programming and Bayesian Methods](https://github.com/CamDavidsonPilon/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers)
 
 ## :art: UI
-1. [Emoji cheat sheet](http://www.emoji-cheat-sheet.com/)
+  1. [Emoji cheat sheet](http://www.emoji-cheat-sheet.com/)
