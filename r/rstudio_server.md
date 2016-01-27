@@ -2,21 +2,19 @@
 ## :penguin: Ubuntu
 1. Choose a CRAN mirror from https://cran.r-project.org/mirrors.html to add a deb entry in /etc/apt/sources.list file
   
-  ```shell
-  $ deb https://<my.favorite.cran.mirror>/bin/linux/ubuntu wily/
-  ```
+  > deb https://<my.favorite.cran.mirror>/bin/linux/ubuntu wily/
+  
   or
-  ```shell
-  $ deb https://<my.favorite.cran.mirror>/bin/linux/ubuntu vivid/
-  ```
+  
+  > deb https://<my.favorite.cran.mirror>/bin/linux/ubuntu vivid/
+  
   or
-  ```shell
-  $ deb https://<my.favorite.cran.mirror>/bin/linux/ubuntu trusty/
-  ```
+  
+  > deb https://<my.favorite.cran.mirror>/bin/linux/ubuntu trusty/
+  
   or
-  ```shell
-  $ deb https://<my.favorite.cran.mirror>/bin/linux/ubuntu precise/
-  ```
+  
+  > deb https://<my.favorite.cran.mirror>/bin/linux/ubuntu precise/
 2. Add the signed key from [CRAN](https://cran.rstudio.com/bin/linux/ubuntu/README.html)
 
   ```shell
