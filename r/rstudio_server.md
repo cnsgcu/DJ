@@ -24,6 +24,7 @@
 3. Install R
 
    ```shell
+   $ sudo apt-get update
    $ sudo apt-get install r-base
    ```
    
