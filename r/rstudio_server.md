@@ -45,3 +45,9 @@
   $ sudo dpkg -i rstudio-server-0.99.491-i386.deb # install RStudio Server 32 bit
   ```
   
+5. Start RStudio Server
+
+    ```shell
+    $ rstudio-server
+    ```
+    Navigate to http://localhost:8787/
