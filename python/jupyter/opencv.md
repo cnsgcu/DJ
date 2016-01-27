@@ -40,6 +40,7 @@ $ cd opencv
 $ mkdir build
 $ cd build
 
+# adjust python and numpy paths to match local Python virtual environment
 $ cmake -D CMAKE_BUILD_TYPE=RELEASE \
         -D CMAKE_INSTALL_PREFIX=/usr/local \
         -D INSTALL_C_EXAMPLES=OFF \
@@ -52,7 +53,7 @@ $ cmake -D CMAKE_BUILD_TYPE=RELEASE \
         -D PYTHON3_NUMPY_INCLUDE_DIRS=~/.pyvenv/IPython/lib/python3.5/site-packages/numpy/core/include/ \
         -D PYTHON_DEFAULT_EXECUTABLE=~/.pyvenv/IPython/bin/python3.5 ..
 
-$ make -j1
+$ make -j1 # adjust -j2, -j3, or -j4 depdending on number of available processors
 $ sudo make install
 $ sudo ldconfig
 ```
