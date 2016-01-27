@@ -1,6 +1,6 @@
 # :sparkles: Install OpenCV :sparkles:
 
-## Ubuntu
+## :penguin: Ubuntu
 ### 1. Install dependencies
 Install build tools
 ```shell
