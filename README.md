@@ -1,6 +1,6 @@
 # DJ
 ## :books: Reading
-  - [ ] [ Seesaw](https://github.com/google/seesaw)
+  - [ ] [ LLVM](https://github.com/Microsoft/llvm)
   - [ ] [Probabilistic Programming and Bayesian Methods](https://github.com/CamDavidsonPilon/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers)
 
 ## :art: UI
