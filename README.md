@@ -1,6 +1,5 @@
 # DJ
 ## :books: Reading
-  - [ ] [SwipeStack](https://github.com/flschweiger/SwipeStack)
   - [ ] [LLVM](https://github.com/Microsoft/llvm)
   - [ ] [NGINX](https://github.com/nginx/nginx)
   - [ ] [FFmpeg](https://github.com/FFmpeg/FFmpeg)
