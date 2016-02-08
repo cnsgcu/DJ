@@ -7,6 +7,7 @@
   - [ ] [BizHawk](http://tasvideos.org/BizHawk.html)
   - [ ] [GitXiv](http://gitxiv.com/page/about)
   - [ ] [WildML](http://www.wildml.com/deep-learning-glossary/)
+  - [ ] [DL4J](http://deeplearning4j.org/glossary.html)
 
 ## :art: UI
   * [Emoji cheat sheet](http://www.emoji-cheat-sheet.com/)
