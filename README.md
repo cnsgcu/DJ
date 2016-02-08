@@ -6,6 +6,7 @@
   - [ ] [FCEUX](http://www.fceux.com/web/home.html)
   - [ ] [BizHawk](http://tasvideos.org/BizHawk.html)
   - [ ] [GitXiv](http://gitxiv.com/page/about)
+  - [ ] [WildML](http://www.wildml.com/deep-learning-glossary/)
 
 ## :art: UI
   * [Emoji cheat sheet](http://www.emoji-cheat-sheet.com/)
