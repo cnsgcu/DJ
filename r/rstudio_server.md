@@ -51,3 +51,54 @@
     $ rstudio-server
     ```
     Navigate to http://localhost:8787/
+
+## :penguin: Mac OSX
+
+1. Install Homebrew
+
+   ```shell
+   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+   ```
+  
+2. Install R base
+
+   ```shell
+   brew tap homebrew/science
+   brew install R
+   ```
+
+3. Install RStudio Server build tools
+
+   ```shell
+   brew install cmake ant git
+   ```
+   
+4. Install RStudio Server
+
+   ```shell
+   git clone https://github.com/rstudio/rstudio.git
+   cd rstudio/dependencies/osx/
+   sudo ./install-dependencies-osx
+   cd ../..
+  
+   mkdir build
+   cd build
+   cmake -DRSTUDIO_TARGET=Server -DCMAKE_BUILD_TYPE=Release ..
+   sudo make install
+   ```
+   
+5. Setup rserver
+  
+  Adjust rserver configuration due to [recent change](https://github.com/rstudio/rstudio/commit/d89fdd0c125889f028a0f19309aa8083e4cf9164) of minimum user id in RStudio Server from 100 to 1000
+
+   ```shell
+   # provide a number <MIN_USER_ID> 
+   echo 'auth-minimum-user-id=<MIN_USER_ID>' >> /etc/rstudio/rserver.conf
+   ```
+   
+6. Start rserver
+
+   ```shell
+   cd  /usr/local/lib/rstudio-server/bin/
+   sudo ./rserver
+   ```
