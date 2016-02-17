@@ -27,4 +27,5 @@ $ source .pyvenv/IPython/bin/activate
 (IPython) $ pip install pandas
 (IPython) $ pip install scikit-learn
 (IPython) $ pip install nltk
+(IPython) $ pip install scapy-python3 # brew install libdnet on Mac OS
 ```
