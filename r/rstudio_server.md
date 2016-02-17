@@ -50,7 +50,10 @@
   Adjust rserver configuration due to [recent change](https://github.com/rstudio/rstudio/commit/d89fdd0c125889f028a0f19309aa8083e4cf9164) of minimum user id in RStudio Server from 100 to 1000
 
    ```shell
-   # provide a number <MIN_USER_ID> 
+   # print out user id
+   id -u
+   
+   # replace <MIN_USER_ID> with a number less than the user id
    echo 'auth-minimum-user-id=<MIN_USER_ID>' >> /etc/rstudio/rserver.conf
    ```
    
@@ -101,7 +104,10 @@
   Adjust rserver configuration due to [recent change](https://github.com/rstudio/rstudio/commit/d89fdd0c125889f028a0f19309aa8083e4cf9164) of minimum user id in RStudio Server from 100 to 1000
 
    ```shell
-   # provide a number <MIN_USER_ID> 
+   # print out user id
+   id -u
+   
+   # replace <MIN_USER_ID> with a number less than the user id
    echo 'auth-minimum-user-id=<MIN_USER_ID>' >> /etc/rstudio/rserver.conf
    ```
    
@@ -131,7 +137,10 @@
   Adjust rserver configuration due to [recent change](https://github.com/rstudio/rstudio/commit/d89fdd0c125889f028a0f19309aa8083e4cf9164) of minimum user id in RStudio Server from 100 to 1000
 
    ```shell
-   # provide a number <MIN_USER_ID> 
+   # print out user id
+   id -u
+   
+   # replace <MIN_USER_ID> with a number less than the user id
    echo 'auth-minimum-user-id=<MIN_USER_ID>' >> /etc/rstudio/rserver.conf
    ```
    
