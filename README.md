@@ -8,7 +8,7 @@
   - [ ] [GitXiv](http://gitxiv.com/page/about)
   - [ ] [WildML](http://www.wildml.com/deep-learning-glossary/)
   - [ ] [LSTM](https://news.ycombinator.com/item?id=11055927)
-  - [ ] [Learning](https://www.youtube.com/watch?v=_PwhiWxHK8o&list=PLnvKubj2-I2LhIibS8TOGC42xsD3-liux)
+  - [ ] [Learning](https://www.youtube.com/watch?v=TjZBTDzGeGg&list=PLnvKubj2-I2LhIibS8TOGC42xsD3-liux&index=2)
 
 ## :art: UI
   * [Emoji cheat sheet](http://www.emoji-cheat-sheet.com/)
