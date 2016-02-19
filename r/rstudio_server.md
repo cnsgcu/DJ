@@ -118,7 +118,7 @@
    sudo ./rserver
    ```
 
-## :penguin: Mac OSX (Install from homebrew)
+##  :apple: Mac OSX (Install from homebrew)
 1. Install Homebrew
 
    ```shell
