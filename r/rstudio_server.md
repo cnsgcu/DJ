@@ -64,7 +64,7 @@
     ```
     Navigate to http://localhost:8787/
 
-## :penguin: Mac OSX (Install from source)
+## :apple: Mac OSX (Install from source)
 
 1. Install Homebrew
 
