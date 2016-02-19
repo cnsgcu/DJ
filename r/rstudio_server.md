@@ -64,7 +64,7 @@
     ```
     Navigate to http://localhost:8787/
 
-## :apple: Mac OSX (Install from source)
+## :green_apple: Mac OSX (Install from source)
 
 1. Install Homebrew
 
