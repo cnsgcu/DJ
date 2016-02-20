@@ -79,15 +79,15 @@ $ cd opencv
 $ mkdir build
 $ cd build
 
-# adjust python and numpy paths to match local Python virtual environment
+# adjust python paths to match local Python virtual environment
 $ cmake -D CMAKE_BUILD_TYPE=RELEASE \
              -D CMAKE_INSTALL_PREFIX=/usr/local \
+             -D BUILD_EXAMPLES=OFF \
+             -D INSTALL_C_EXAMPLES=OFF \
+             -D INSTALL_PYTHON_EXAMPLES=OFF \
              -D PYTHON3_PACKAGES_PATH=~/.pyvenv/IPython/lib/python3.5/site-packages \
              -D PYTHON3_LIBRARY=/usr/local/Cellar/python3/3.5.1/Frameworks/Python.framework/Versions/3.5/bin \
              -D PYTHON3_INCLUDE_DIR=/usr/local/Cellar/python3/3.5.1/Frameworks/Python.framework/Versions/3.5/Headers \
-             -D INSTALL_C_EXAMPLES=OFF \
-             -D INSTALL_PYTHON_EXAMPLES=OFF \
-             -D BUILD_EXAMPLES=OFF \
              -D OPENCV_EXTRA_MODULES_PATH=~/Downloads/opencv_contrib/modules ..
 
 $ make -j1 # adjust -j2, -j3, or -j4 depdending on number of available processors
