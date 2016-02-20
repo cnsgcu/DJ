@@ -43,10 +43,10 @@ $ cd build
 # adjust python and numpy paths to match local Python virtual environment
 $ cmake -D CMAKE_BUILD_TYPE=RELEASE \
         -D CMAKE_INSTALL_PREFIX=/usr/local \
+        -D BUILD_EXAMPLES=OFF \
         -D INSTALL_C_EXAMPLES=OFF \
         -D INSTALL_PYTHON_EXAMPLES=OFF \
         -D OPENCV_EXTRA_MODULES_PATH=~/Downloads/opencv_contrib/modules/ \
-        -D BUILD_EXAMPLES=OFF \
         -D PYTHON3_EXECUTABLE=~/.pyvenv/IPython/bin/python3.5 \
         -D PYTHON3_LIBRARY=/usr/lib/x86_64-linux-gnu/libpython3.5m.so \
         -D PYTHON3_PACKAGES_PATH=~/.pyvenv/IPython/lib/python3.5/site-packages/ \
@@ -56,4 +56,40 @@ $ cmake -D CMAKE_BUILD_TYPE=RELEASE \
 $ make -j1 # adjust -j2, -j3, or -j4 depdending on number of available processors
 $ sudo make install
 $ sudo ldconfig
+```
+
+## :apple: Mac OSX
+### 1. Install dependencies
+```shell
+brew install cmake pkg-config jpeg libpng ffmpeg eigen tbb tesseract
+```
+### 2. Clone the latest opencv and opencv_contrib
+```shell
+$ git clone https://github.com/Itseez/opencv.git
+$ cd opencv
+$ git checkout 3.1.0
+
+$ git clone https://github.com/Itseez/opencv_contrib.git
+$ cd opencv_contrib
+$ git checkout 3.1.0
+```
+### 3. Install OpenCV for existing Python virtual environment
+```shell
+$ cd opencv
+$ mkdir build
+$ cd build
+
+# adjust python and numpy paths to match local Python virtual environment
+$ cmake -D CMAKE_BUILD_TYPE=RELEASE \
+             -D CMAKE_INSTALL_PREFIX=/usr/local \
+             -D PYTHON3_PACKAGES_PATH=~/.pyvenv/IPython/lib/python3.5/site-packages \
+             -D PYTHON3_LIBRARY=/usr/local/Cellar/python3/3.5.1/Frameworks/Python.framework/Versions/3.5/bin \
+             -D PYTHON3_INCLUDE_DIR=/usr/local/Cellar/python3/3.5.1/Frameworks/Python.framework/Versions/3.5/Headers \
+             -D INSTALL_C_EXAMPLES=OFF \
+             -D INSTALL_PYTHON_EXAMPLES=OFF \
+             -D BUILD_EXAMPLES=OFF \
+             -D OPENCV_EXTRA_MODULES_PATH=~/Downloads/opencv_contrib/modules ..
+
+$ make -j1 # adjust -j2, -j3, or -j4 depdending on number of available processors
+$ sudo make install
 ```
