@@ -97,7 +97,7 @@ public class OCR
         final long init = System.currentTimeMillis();
         final List<int[]> combs = combination(2, 256);
 
-        final int[][] queries = new int[combination_len(2, 256) << 2][10];
+        final int[][] queries = new int[combs.size() << 2][10];
 
         final URL url = OCR.class.getClassLoader().getResource("data/OCRpixels.csv");
 
