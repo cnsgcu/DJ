@@ -60,7 +60,7 @@ public class OCR
     private static int combination_len(int len, int cap)
     {
         int count = 1;
-        for (int i = len - 1; i > -1; i--)
+        for (int i = len - 1; i > -1; --i)
         {
             count = (count * (cap - i)) / (len - i);
         }
@@ -110,12 +110,12 @@ public class OCR
                 final Record record = new Record(scanner.nextLine());
                 records.add(record);
 
-                for (int i = 0; i < combs.size(); i++)
+                for (int i = 0; i < combs.size(); ++i)
                 {
                     final int[] comb = combs.get(i);
 
                     int offset = 0;
-                    for (int j = 0; j < comb.length; j++)
+                    for (int j = 0; j < comb.length; ++j)
                     {
                         offset += (record.pixels[comb[j]] << (comb.length - j - 1));
                     }
@@ -130,18 +130,18 @@ public class OCR
             {
                 final double[] prob = new double[10];
 
-                for (int i = 0; i < combs.size(); i++)
+                for (int i = 0; i < combs.size(); ++i)
                 {
                     final int[] comb = combs.get(i);
 
                     int offset = 0;
-                    for (int j = 0; j < comb.length; j++)
+                    for (int j = 0; j < comb.length; ++j)
                     {
                         offset += (record.pixels[comb[j]] << (comb.length - j - 1));
                     }
 
                     final double count = (double) sum(queries[(i << 2) + offset]);
-                    for (int j = 0; j < 10; j++)
+                    for (int j = 0; j < 10; ++j)
                     {
                         prob[j] += Math.log(queries[(i << 2) + offset][j] / count);
                     }
