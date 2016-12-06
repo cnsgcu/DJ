@@ -94,7 +94,6 @@ public class OCR
 
     public static void main(String... args)
     {
-        final long init = System.currentTimeMillis();
         final List<int[]> combs = combination(2, 256);
 
         final int[][] queries = new int[combs.size() << 2][10];
@@ -166,7 +165,5 @@ public class OCR
         {
             e.printStackTrace();
         }
-
-        System.out.println(System.currentTimeMillis() - init);
     }
 }
