@@ -7,17 +7,8 @@ import java.net.URISyntaxException;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
-
-
-class Query
-{
-    List<Integer> idxs;
-    List<Integer> vals;
-    int[] hist = new int[10];
-}
 
 class Record
 {
@@ -37,17 +28,14 @@ class Record
 
 public class OCR
 {
-    static private void combinationGenerator(List<List<Integer>> bag, int n, int cap, int val, int[] buf)
+    static private void combinationGenerator(List<int[]> bag, int n, int cap, int val, int[] buf)
     {
         if (buf.length - n <= cap - val)
         {
             if (n == buf.length)
             {
-                final List<Integer> list = new ArrayList<>(buf.length);
-                for (int item : buf)
-                {
-                    list.add(item);
-                }
+                final int[] list = new int[buf.length];
+                System.arraycopy(buf, 0, list, 0, buf.length);
 
                 bag.add(list);
             }
@@ -60,54 +48,24 @@ public class OCR
         }
     };
 
-    private static List<List<Integer>> combination(int len, int cap)
+    private static List<int[]> combination(int len, int cap)
     {
-        final List<List<Integer>> bag = new LinkedList<>();
+        final List<int[]> bag = new ArrayList<>(combination_len(len, cap));
 
         combinationGenerator(bag, 0, cap, 0, new int[len]);
 
         return bag;
     }
 
-    static private void binaryGenerator(List<List<Integer>> bag, int[] buf, int pos)
+    private static int combination_len(int len, int cap)
     {
-        if (pos == buf.length)
+        int count = 1;
+        for (int i = len - 1; i > -1; i--)
         {
-            final List<Integer> list = new ArrayList<>(buf.length);
-
-            for (int item : buf)
-            {
-                list.add(item);
-            }
-
-            bag.add(list);
+            count = (count * (cap - i)) / (len - i);
         }
-        else
-        {
-            buf[pos] = 0;
-            binaryGenerator(bag, buf, pos + 1);
-            buf[pos] = 1;
-            binaryGenerator(bag, buf, pos + 1);
-        }
-    };
-
-    private static List<Query> make_query(List<Integer> comb)
-    {
-        final List<Query> queries = new LinkedList<>();
-        final List<List<Integer>> bag = new LinkedList<>();
-
-        binaryGenerator(bag, new int[comb.size()], 0);
-
-        for (final List<Integer> item : bag)
-        {
-            final Query query = new Query();
-            query.idxs = comb;
-            query.vals = item;
-
-            queries.add(query);
-        }
-
-        return queries;
+        
+        return count;
     }
 
     static private long sum(int[] bag)
@@ -137,14 +95,9 @@ public class OCR
     public static void main(String... args)
     {
         final long init = System.currentTimeMillis();
-        final List<List<Integer>> bag = combination(2, 256);
+        final List<int[]> combs = combination(2, 256);
 
-        final List<Query> queries = new ArrayList<>(32640 * 4);
-
-        for (final List<Integer> item : bag)
-        {
-            queries.addAll(make_query(item));
-        }
+        final int[][] queries = new int[combination_len(2, 256) << 2][10];
 
         final URL url = OCR.class.getClassLoader().getResource("data/OCRpixels.csv");
 
@@ -158,12 +111,17 @@ public class OCR
                 final Record record = new Record(scanner.nextLine());
                 records.add(record);
 
-                for (int i = 0; i < queries.size() - 3; i += 4)
+                for (int i = 0; i < combs.size(); i++)
                 {
-                    final Query query = queries.get(i);
+                    final int[] comb = combs.get(i);
 
-                    final int offset = (record.pixels[query.idxs.get(0)] << 1) + record.pixels[query.idxs.get(1)];
-                    queries.get(i + offset).hist[record.digit] += 1;
+                    int offset = 0;
+                    for (int j = 0; j < comb.length; j++)
+                    {
+                        offset += (record.pixels[comb[j]] << (comb.length - j - 1));
+                    }
+
+                    queries[(i << 2) + offset][record.digit] += 1;
                 }
             }
 
@@ -173,15 +131,20 @@ public class OCR
             {
                 final double[] prob = new double[10];
 
-                for (int i = 0; i < queries.size() - 3; i += 4)
+                for (int i = 0; i < combs.size(); i++)
                 {
-                    final Query query = queries.get(i);
-                    final int offset = (record.pixels[query.idxs.get(0)] << 1) + record.pixels[query.idxs.get(1)];
-                    final double count = (double) sum(queries.get(i + offset).hist);
+                    final int[] comb = combs.get(i);
 
-                    for (int j = 0; j < 10; ++j)
+                    int offset = 0;
+                    for (int j = 0; j < comb.length; j++)
                     {
-                        prob[j] += Math.log(queries.get(i + offset).hist[j] / count);
+                        offset += (record.pixels[comb[j]] << (comb.length - j - 1));
+                    }
+
+                    final double count = (double) sum(queries[(i << 2) + offset]);
+                    for (int j = 0; j < 10; j++)
+                    {
+                        prob[j] += Math.log(queries[(i << 2) + offset][j] / count);
                     }
                 }
 
